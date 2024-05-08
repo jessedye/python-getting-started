@@ -5,6 +5,8 @@ import sys
 
 # The below is an example variable feel free to change it
 name = "Jesse"
+# Example variable but a number
+number = 10
 
 # The code below loads modules/print.py to call the code later as a print module
 spec = importlib.util.spec_from_file_location("module.name", "modules/print.py")
@@ -43,3 +45,13 @@ print("Preparing to run logic module")
 # The line below calls the code in modules/logic-operators.py as a Function
 # sets logic variable to Jesse that gets passed to modules/logic-operators.py as an Argument
 logic.logic(name)
+
+# The code below loads modules/math.py to call the code later as a logic module
+spec = importlib.util.spec_from_file_location("module.name", "modules/math.py")
+math = importlib.util.module_from_spec(spec)
+sys.modules["module.name"] = math
+spec.loader.exec_module(math)
+print("Preparing to run math module")
+# The line below calls the code in modules/math.py as a Function
+# sets logic variable to Jesse that gets passed to modules/maths.py as an Argument
+math.math(number)
