@@ -53,5 +53,5 @@ sys.modules["module.name"] = math
 spec.loader.exec_module(math)
 print("Preparing to run math module")
 # The line below calls the code in modules/math.py as a Function
-# sets logic variable to Jesse that gets passed to modules/maths.py as an Argument
+# sets logic variable to Jesse that gets passed to modules/math.py as an Argument
 math.math(number)
